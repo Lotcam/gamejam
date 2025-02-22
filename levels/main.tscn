@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi80h5b0o2o5s"]
+[gd_scene load_steps=10 format=3 uid="uid://bi80h5b0o2o5s"]
 
 [ext_resource type="PackedScene" uid="uid://coxodwc7a7nw6" path="res://objects/player.tscn" id="1_0mcer"]
 [ext_resource type="Script" path="res://levels/main.gd" id="1_ykp7m"]
+[ext_resource type="PackedScene" uid="uid://8uvd11w4g0mh" path="res://objects/dog_cart.tscn" id="3_023fo"]
+[ext_resource type="PackedScene" uid="uid://bqnsij8758r4q" path="res://objects/grill.tscn" id="4_w1fll"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pwm22"]
 sky_top_color = Color(0.709077, 0.191517, 0.630017, 1)
@@ -44,3 +46,9 @@ shape = SubResource("BoxShape3D_tggdt")
 
 [node name="Player" parent="." instance=ExtResource("1_0mcer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="DogCart" parent="." instance=ExtResource("3_023fo")]
+transform = Transform3D(0.022129, 0, -0.999755, 0, 1, 0, 0.999755, 0, 0.022129, -0.218404, 0, -1.60773)
+
+[node name="grill" parent="." instance=ExtResource("4_w1fll")]
+transform = Transform3D(0.282107, 0, 0.959383, 0, 1, 0, -0.959383, 0, 0.282107, -1.36076, 0.371793, -0.564169)

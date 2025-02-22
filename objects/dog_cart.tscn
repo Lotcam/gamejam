@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://8uvd11w4g0mh"]
+
+[ext_resource type="PackedScene" uid="uid://c847ytyy0x173" path="res://assets/Hot dogs! Get your hot dogs!.glb" id="1_efq1u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f8vkj"]
+size = Vector3(0.746582, 0.70752, 1.46075)
+
+[node name="DogCart" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.498832, -0.302863, 0)
+
+[node name="Hot dogs! Get your hot dogs!" parent="." instance=ExtResource("1_efq1u")]
+transform = Transform3D(2.75, 0, 0, 0, 2.75, 0, 0, 0, 2.75, 0, 0.680742, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305176, 0.652383, 0.0104675)
+shape = SubResource("BoxShape3D_f8vkj")
