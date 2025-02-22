@@ -1,0 +1,40 @@
+[gd_scene load_steps=11 format=3 uid="uid://cvc85ubf163dv"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_d2o7x"]
+[ext_resource type="PackedScene" uid="uid://cdvrjd6tchxhj" path="res://assets/meat.glb" id="2_8fwlx"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_w32te"]
+[ext_resource type="Animation" uid="uid://plad1r85f7ws" path="res://addons/godot-xr-tools/hands/animations/left/Grip.res" id="4_dfpoq"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_06jd4"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_wxyr2"]
+[ext_resource type="Animation" uid="uid://ccds2u22gbxn7" path="res://addons/godot-xr-tools/hands/animations/right/Grip.res" id="7_snbwn"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3ck8u"]
+height = 0.929727
+radius = 0.0774776
+
+[sub_resource type="Resource" id="Resource_qidsl"]
+script = ExtResource("5_06jd4")
+closed_pose = ExtResource("4_dfpoq")
+
+[sub_resource type="Resource" id="Resource_307jm"]
+script = ExtResource("5_06jd4")
+closed_pose = ExtResource("7_snbwn")
+
+[node name="PickableObject" instance=ExtResource("1_d2o7x")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.00643304, 0.0461502, 0.0182348)
+shape = SubResource("CylinderShape3D_3ck8u")
+
+[node name="meat" parent="." index="1" instance=ExtResource("2_8fwlx")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.182532, 0)
+
+[node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource("3_w32te")]
+transform = Transform3D(0.0215446, -0.999768, -0.000605559, -0.999373, -0.0215531, 0.0280896, -0.0280961, -1.38785e-10, -0.999605, 0.0235966, -0.11325, 0.105175)
+visible = true
+hand_pose = SubResource("Resource_qidsl")
+
+[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource("6_wxyr2")]
+transform = Transform3D(-0.0410212, -0.999158, 0, 0.999158, -0.0410212, 0, 0, 0, 1, 0.0286124, -0.108283, -0.100137)
+visible = true
+hand_pose = SubResource("Resource_307jm")

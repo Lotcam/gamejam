@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcj3e1vyr43hk"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_lmx4q"]
+[ext_resource type="PackedScene" uid="uid://2uawouecr47l" path="res://assets/hotgun.glb" id="2_upone"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u6boh"]
+size = Vector3(1, 0.644531, 0.673828)
+
+[node name="PickableObject" instance=ExtResource("1_lmx4q")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.313477, 0.0742188)
+shape = SubResource("BoxShape3D_u6boh")
+
+[node name="hotgun" parent="." index="1" instance=ExtResource("2_upone")]
