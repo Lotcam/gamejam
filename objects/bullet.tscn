@@ -4,17 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://cdvrjd6tchxhj" path="res://assets/meat.glb" id="1_q418b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qohtf"]
-size = Vector3(0.905029, 0.1427, 0.167725)
+size = Vector3(0.282227, 0.0373535, 0.034668)
 
 [node name="Bullet" type="RigidBody3D" groups=["bullet"]]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.487442, 0, 0)
 script = ExtResource("1_hx6rd")
 
 [node name="meat" parent="." instance=ExtResource("1_q418b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.208665, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.208665, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0125732, 0.0713037, 0.0238037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00146481, -0.124993, 0.00744629)
 shape = SubResource("BoxShape3D_qohtf")
 
 [node name="LifeTime" type="Timer" parent="."]

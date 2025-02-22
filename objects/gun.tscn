@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://cw1042clugkde"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_kiuk4"]
+[ext_resource type="Script" path="res://gun.gd" id="2_wg4x5"]
+[ext_resource type="PackedScene" uid="uid://diqpj0uanmq7u" path="res://assets/hotgun.glb" id="3_uncpm"]
+[ext_resource type="PackedScene" uid="uid://u62u48jaj6ai" path="res://objects/bullet.tscn" id="3_xs44u"]
+[ext_resource type="PackedScene" uid="uid://cylkrqt7lpwut" path="res://assets/handle.glb" id="4_nlgou"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_ebddu"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_qwk8d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ha6g"]
+size = Vector3(0.295654, 0.113342, 0.0078125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xsxf"]
+size = Vector3(0.0531158, 0.189453, 0.111084)
+
+[node name="PickableObject" instance=ExtResource("1_kiuk4")]
+script = ExtResource("2_wg4x5")
+bullet = ExtResource("3_xs44u")
+bullet_speed = 10.0
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216064, 0.0488642, 0)
+shape = SubResource("BoxShape3D_7ha6g")
+
+[node name="hotgun" parent="." index="1" instance=ExtResource("3_uncpm")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="handle" parent="." index="2" instance=ExtResource("4_nlgou")]
+transform = Transform3D(9.5399e-10, 0, -0.08, 0, 0.08, 0, 0.08, 0, 9.5399e-10, 0, 0.0152783, 0)
+
+[node name="GrabPointHandLeft" parent="." index="3" instance=ExtResource("5_ebddu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="GrabPointHandRight" parent="." index="4" instance=ExtResource("6_qwk8d")]
+transform = Transform3D(0.00122173, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00122173, 0, 0, 0)
+
+[node name="Cooldown" type="Timer" parent="." index="5"]
+
+[node name="SpawnPoint" type="Marker3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266118, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0949478, -0.034668, 0)
+shape = SubResource("BoxShape3D_5xsxf")
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

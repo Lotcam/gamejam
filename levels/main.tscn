@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bi80h5b0o2o5s"]
+[gd_scene load_steps=11 format=3 uid="uid://bi80h5b0o2o5s"]
 
 [ext_resource type="PackedScene" uid="uid://coxodwc7a7nw6" path="res://objects/player.tscn" id="1_0mcer"]
 [ext_resource type="Script" path="res://levels/main.gd" id="1_ykp7m"]
 [ext_resource type="PackedScene" uid="uid://d2xdgekjs5s8q" path="res://objects/dog_cart.tscn" id="3_023fo"]
 [ext_resource type="PackedScene" uid="uid://b8s73qs1a6t8m" path="res://objects/grill.tscn" id="4_w1fll"]
-[ext_resource type="PackedScene" uid="uid://dksbwiieibgam" path="res://objects/meat.tscn" id="5_mbvr2"]
-[ext_resource type="PackedScene" uid="uid://yt0aimatjbaf" path="res://objects/hotgun.tscn" id="6_mfcyb"]
-[ext_resource type="PackedScene" uid="uid://wfo1d6igdbq8" path="res://objects/dogs/beagle.tscn" id="7_7dvwr"]
+[ext_resource type="PackedScene" uid="uid://cw1042clugkde" path="res://objects/gun.tscn" id="5_j7lik"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pwm22"]
 sky_top_color = Color(0.709077, 0.191517, 0.630017, 1)
@@ -56,17 +54,5 @@ transform = Transform3D(0.022129, 0, -0.999755, 0, 1, 0, 0.999755, 0, 0.022129, 
 [node name="grill" parent="." instance=ExtResource("4_w1fll")]
 transform = Transform3D(0.282107, 0, 0.959383, 0, 1, 0, -0.959383, 0, 0.282107, -1.36076, 0.371793, -0.564169)
 
-[node name="Meat" parent="." instance=ExtResource("5_mbvr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22636, -1.39265)
-
-[node name="Gun" parent="." instance=ExtResource("6_mfcyb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.131928, 1.30781, -1.83308)
-
-[node name="Meat2" parent="." instance=ExtResource("5_mbvr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22636, -1.48758)
-
-[node name="Meat3" parent="." instance=ExtResource("5_mbvr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0155776, 1.22636, -1.57136)
-
-[node name="Meat4" parent="." instance=ExtResource("5_mbvr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22636, -1.30397)
+[node name="PickableObject" parent="." instance=ExtResource("5_j7lik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000961214, 1.00614, -1.51887)
