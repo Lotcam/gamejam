@@ -5,7 +5,7 @@ extends XRToolsPickable
 var can_fire = true
 
 func action():
-	action()
+	super.action()
 	
 	if can_fire:
 		_spawn_bullets()
@@ -16,10 +16,11 @@ func _spawn_bullets():
 	if bullet:
 		var new_bullet : RigidBody3D = bullet.instantiate()
 		if new_bullet:
-			new_bullet.set_as_toplevel(true)
+			var spawn_global_transform = $SpawnPoint.global_transform
 			add_child(new_bullet)
-			new_bullet.transform = $SpawnPoint.global_transform
-			new_bullet.linear_velocity = new_bullet.transform.basis.z * bullet_speed
+			new_bullet.global_transform = spawn_global_transform
+			new_bullet.reparent(get_tree().current_scene, true)
+			new_bullet.linear_velocity = spawn_global_transform.basis.x * bullet_speed
 
 func _on_cooldown_timeout():
 	can_fire = true
