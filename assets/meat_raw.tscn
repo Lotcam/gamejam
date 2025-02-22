@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ooncxjs0h52"]
+
+[ext_resource type="PackedScene" uid="uid://cdvrjd6tchxhj" path="res://assets/meat.glb" id="1_sgpd0"]
+
+[node name="meat" instance=ExtResource("1_sgpd0")]

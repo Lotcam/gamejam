@@ -56,7 +56,4 @@ transform = Transform3D(0.022129, 0, -0.999755, 0, 1, 0, 0.999755, 0, 0.022129, 
 transform = Transform3D(0.282107, 0, 0.959383, 0, 1, 0, -0.959383, 0, 0.282107, -1.36076, 0.371793, -0.564169)
 
 [node name="PickableObject" parent="." instance=ExtResource("5_mbvr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25628, -1.37091)
-
-[node name="PickableObject2" parent="." instance=ExtResource("6_24vbi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.211231, 1.21285, -1.73597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22636, -1.39265)
