@@ -29,7 +29,7 @@ closed_pose = ExtResource("7_snbwn")
 [sub_resource type="BoxShape3D" id="BoxShape3D_myyy2"]
 size = Vector3(0.273865, 0.0523682, 0.0512848)
 
-[node name="PickableObject" instance=ExtResource("1_d2o7x")]
+[node name="PickableObject" groups=["Magazine"] instance=ExtResource("1_d2o7x")]
 script = ExtResource("2_dp12a")
 
 [node name="CollisionShape3D" parent="." index="0"]
