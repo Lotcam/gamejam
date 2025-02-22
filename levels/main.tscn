@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2xdgekjs5s8q" path="res://objects/dog_cart.tscn" id="3_023fo"]
 [ext_resource type="PackedScene" uid="uid://b8s73qs1a6t8m" path="res://objects/grill.tscn" id="4_w1fll"]
 [ext_resource type="PackedScene" uid="uid://dksbwiieibgam" path="res://objects/meat.tscn" id="5_mbvr2"]
-[ext_resource type="PackedScene" uid="uid://yt0aimatjbaf" path="res://objects/hotgun.tscn" id="6_24vbi"]
+[ext_resource type="PackedScene" uid="uid://yt0aimatjbaf" path="res://objects/hotgun.tscn" id="6_mfcyb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pwm22"]
 sky_top_color = Color(0.709077, 0.191517, 0.630017, 1)
@@ -57,3 +57,6 @@ transform = Transform3D(0.282107, 0, 0.959383, 0, 1, 0, -0.959383, 0, 0.282107, 
 
 [node name="PickableObject" parent="." instance=ExtResource("5_mbvr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22636, -1.39265)
+
+[node name="Gun" parent="." instance=ExtResource("6_mfcyb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.131928, 1.30781, -1.83308)
