@@ -56,11 +56,17 @@ transform = Transform3D(0.022129, 0, -0.999755, 0, 1, 0, 0.999755, 0, 0.022129, 
 [node name="grill" parent="." instance=ExtResource("4_w1fll")]
 transform = Transform3D(0.282107, 0, 0.959383, 0, 1, 0, -0.959383, 0, 0.282107, -1.36076, 0.371793, -0.564169)
 
-[node name="PickableObject" parent="." instance=ExtResource("5_mbvr2")]
+[node name="Meat" parent="." instance=ExtResource("5_mbvr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22636, -1.39265)
 
 [node name="Gun" parent="." instance=ExtResource("6_mfcyb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.131928, 1.30781, -1.83308)
 
-[node name="Beagle" parent="." instance=ExtResource("7_7dvwr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.334493, 0, -9.47083)
+[node name="Meat2" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22636, -1.48758)
+
+[node name="Meat3" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0155776, 1.22636, -1.57136)
+
+[node name="Meat4" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22636, -1.30397)

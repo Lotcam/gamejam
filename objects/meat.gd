@@ -15,14 +15,15 @@ func cooking():
 
 func cooked():
 	state = Util.MEAT_STATE.COOKED
+	#self.add_to_group("Magazine")
 	$meshes/meat_raw.hide()
 	$meshes/meat_cooked.show()
 
 func burned():
+	#self.remove_from_group("Magazine")
 	state = Util.MEAT_STATE.BURNED
 	$meshes/meat_burned.show()
 	$meshes/meat_cooked.hide()
-
 
 func _on_timer_cooked_timeout() -> void:
 	cooked()
