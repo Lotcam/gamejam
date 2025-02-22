@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi80h5b0o2o5s"]
+[gd_scene load_steps=8 format=3 uid="uid://bi80h5b0o2o5s"]
 
 [ext_resource type="PackedScene" uid="uid://coxodwc7a7nw6" path="res://objects/player.tscn" id="1_0mcer"]
+[ext_resource type="Script" path="res://levels/main.gd" id="1_ykp7m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pwm22"]
 sky_top_color = Color(0.709077, 0.191517, 0.630017, 1)
@@ -23,6 +24,7 @@ size = Vector2(100, 100)
 size = Vector3(100, 1, 100)
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_ykp7m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hr6io")
