@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=7 format=3 uid="uid://coxodwc7a7nw6"]
 
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="1_p7bvm"]
@@ -7,22 +8,22 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_84ln1"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/player/player_body.gd" id="6_60ntg"]
 
-[node name="Player" type="XROrigin3D"]
+[node name="XROrigin3D" type="XROrigin3D"]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="LeftHand" type="XRController3D" parent="."]
 tracker = &"left_hand"
 
-[node name="MovementDirect" parent="LeftHand" instance=ExtResource("1_p7bvm")]
+[node name="LeftHand" parent="LeftHand" instance=ExtResource("1_4k8pv")]
 
-[node name="LeftHand" parent="LeftHand" instance=ExtResource("2_d3vgy")]
+[node name="MovementDirect" parent="LeftHand" instance=ExtResource("2_0eo64")]
+strafe = true
 
 [node name="RightHand" type="XRController3D" parent="."]
 tracker = &"right_hand"
 
-[node name="MovementTurn" parent="RightHand" instance=ExtResource("3_agtdj")]
+[node name="RightHand" parent="RightHand" instance=ExtResource("3_8fsqr")]
 
 [node name="RightHand" parent="RightHand" instance=ExtResource("4_bo2ht")]
 
@@ -33,3 +34,4 @@ top_level = true
 collision_layer = 524288
 collision_mask = 1023
 script = ExtResource("6_60ntg")
+
