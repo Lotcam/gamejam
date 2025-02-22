@@ -2,6 +2,7 @@ extends XRToolsPickable
 
 @onready var timer_cook: Timer = $TimerCooked
 @onready var timer_burned: Timer = $TimerBurned
+var state: Util.MEAT_STATE = Util.MEAT_STATE.RAW
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if area.has_method("is_grill"):
@@ -13,10 +14,14 @@ func cooking():
 	timer_burned.start()
 
 func cooked():
-	print("cooked!")
+	state = Util.MEAT_STATE.COOKED
+	$meshes/meat_raw.hide()
+	$meshes/meat_cooked.show()
 
 func burned():
-	print("BURNED!")
+	state = Util.MEAT_STATE.BURNED
+	$meshes/meat_burned.show()
+	$meshes/meat_cooked.hide()
 
 
 func _on_timer_cooked_timeout() -> void:
