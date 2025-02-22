@@ -25,6 +25,10 @@ Util="*res://scripts/util.gd"
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[global_group]
+
+bullet=""
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

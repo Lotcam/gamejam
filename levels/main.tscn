@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bi80h5b0o2o5s"]
+[gd_scene load_steps=13 format=3 uid="uid://bi80h5b0o2o5s"]
 
 [ext_resource type="PackedScene" uid="uid://coxodwc7a7nw6" path="res://objects/player.tscn" id="1_0mcer"]
 [ext_resource type="Script" path="res://levels/main.gd" id="1_ykp7m"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8s73qs1a6t8m" path="res://objects/grill.tscn" id="4_w1fll"]
 [ext_resource type="PackedScene" uid="uid://dksbwiieibgam" path="res://objects/meat.tscn" id="5_mbvr2"]
 [ext_resource type="PackedScene" uid="uid://yt0aimatjbaf" path="res://objects/hotgun.tscn" id="6_mfcyb"]
+[ext_resource type="PackedScene" uid="uid://wfo1d6igdbq8" path="res://objects/dogs/beagle.tscn" id="7_7dvwr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pwm22"]
 sky_top_color = Color(0.709077, 0.191517, 0.630017, 1)
@@ -60,3 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22636, -1.39265)
 
 [node name="Gun" parent="." instance=ExtResource("6_mfcyb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.131928, 1.30781, -1.83308)
+
+[node name="Beagle" parent="." instance=ExtResource("7_7dvwr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.334493, 0, -9.47083)
