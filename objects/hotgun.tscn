@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://yt0aimatjbaf"]
+[gd_scene load_steps=13 format=3 uid="uid://yt0aimatjbaf"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_lmx4q"]
+[ext_resource type="Script" path="res://objects/hotgun.gd" id="2_6hran"]
 [ext_resource type="PackedScene" uid="uid://diqpj0uanmq7u" path="res://assets/hotgun.glb" id="2_upone"]
 [ext_resource type="PackedScene" uid="uid://cylkrqt7lpwut" path="res://assets/handle.glb" id="3_0p3xp"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_hhoou"]
@@ -22,6 +23,9 @@ closed_pose = ExtResource("8_dwoq8")
 
 [node name="PickableObject" instance=ExtResource("1_lmx4q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000579074, 0, -0.00100303)
+script = ExtResource("2_6hran")
+bullet = null
+bullet_speed = 10.0
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00308228, 0.0337529, 0.0208741)
@@ -40,3 +44,12 @@ hand_pose = SubResource("Resource_sdyvq")
 [node name="GrabPointHandRight" parent="." index="4" instance=ExtResource("7_wtnmd")]
 transform = Transform3D(0.0955331, 0, -0.995426, 0, 1, 0, 0.995426, 0, 0.0955331, 0.0228616, 0.00648918, -0.0198916)
 hand_pose = SubResource("Resource_1flw0")
+
+[node name="Cooldown" type="Timer" parent="." index="5"]
+wait_time = 0.5
+one_shot = true
+
+[node name="SpawnPoint" type="Marker3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145497, 0.0474901, 0.00281673)
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
