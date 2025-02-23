@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
 # Minimum speed of the mob in meters per second.
-@export var min_speed = 5
+@export var min_speed = 2
 # Maximum speed of the mob in meters per second.
 @export var max_speed = 6
 
 var moving = true
+var count = 0
 
 @onready var movement = $Movement
 
@@ -16,11 +17,13 @@ func _physics_process(_delta):
 func feed(meat: Util.MEAT_STATE):
 	Global.score_up(meat)
 	print("score: " + str(Global.score))
-	queue_free()
+	despawn()
 
 func _on_timer_feed_despawn_timeout() -> void:
-	queue_free()
+	despawn()
 
+func despawn():
+	queue_free()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("bullet"):
@@ -30,6 +33,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func initialize(start_position, pivot_position):
 	look_at_from_position(start_position, pivot_position, Vector3.UP)
 	rotate_y(randf_range(-PI / 4, PI / 4))
+	if Global.dogs >= 12:
+		$Timer_feed_despawn.wait_time = 7
 	
 	# Movement
 	var random_speed = randi_range(min_speed, max_speed)
@@ -42,5 +47,5 @@ func stop_movement():
 	velocity = Vector3.ZERO
 
 
-func _on_visible_on_screen_notifier_3d_screen_exited():
-	queue_free()
+#func _on_visible_on_screen_notifier_3d_screen_exited():
+	#queue_free()

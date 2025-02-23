@@ -119,7 +119,7 @@ curve = SubResource("Curve3D_2s75k")
 transform = Transform3D(-0.999541, 0, 0.0302897, 0, 1, 0, -0.0302897, 0, -0.999541, -16.7311, 0, -19.5787)
 
 [node name="DogTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 5.0
 autostart = true
 
 [node name="Beagle2" parent="." instance=ExtResource("6_qyb1i")]
