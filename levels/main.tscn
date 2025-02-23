@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bi80h5b0o2o5s"]
+[gd_scene load_steps=13 format=3 uid="uid://bi80h5b0o2o5s"]
 
 [ext_resource type="PackedScene" uid="uid://coxodwc7a7nw6" path="res://objects/player.tscn" id="1_0mcer"]
 [ext_resource type="Script" path="res://levels/main.gd" id="1_ykp7m"]
 [ext_resource type="PackedScene" uid="uid://d2xdgekjs5s8q" path="res://objects/dog_cart.tscn" id="3_023fo"]
 [ext_resource type="PackedScene" uid="uid://b8s73qs1a6t8m" path="res://objects/grill.tscn" id="4_w1fll"]
 [ext_resource type="PackedScene" uid="uid://cw1042clugkde" path="res://objects/gun.tscn" id="5_j7lik"]
+[ext_resource type="PackedScene" uid="uid://dksbwiieibgam" path="res://objects/meat.tscn" id="5_mbvr2"]
 [ext_resource type="PackedScene" uid="uid://wfo1d6igdbq8" path="res://objects/dogs/beagle.tscn" id="6_qyb1i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pwm22"]
@@ -60,3 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000961214, 1.00614, -1.5188
 
 [node name="Beagle" parent="." instance=ExtResource("6_qyb1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57117, 0, -7.87667)
+
+[node name="PickableObject2" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.38851)
