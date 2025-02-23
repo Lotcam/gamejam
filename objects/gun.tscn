@@ -1,12 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw1042clugkde"]
+[gd_scene load_steps=17 format=3 uid="uid://cw1042clugkde"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_kiuk4"]
-[ext_resource type="Script" path="res://gun.gd" id="2_wg4x5"]
+[ext_resource type="Script" path="res://objects/gun.gd" id="2_cr4qw"]
 [ext_resource type="PackedScene" uid="uid://diqpj0uanmq7u" path="res://assets/hotgun.glb" id="3_uncpm"]
 [ext_resource type="PackedScene" uid="uid://u62u48jaj6ai" path="res://objects/bullet.tscn" id="3_xs44u"]
 [ext_resource type="PackedScene" uid="uid://cylkrqt7lpwut" path="res://assets/handle.glb" id="4_nlgou"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_ebddu"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_qwk8d"]
+[ext_resource type="PackedScene" uid="uid://vrsw8rriwhlw" path="res://assets/meat_cooked.tscn" id="7_85n62"]
+[ext_resource type="PackedScene" uid="uid://dd5n7slqclqye" path="res://assets/meat_burned.tscn" id="8_y3r4r"]
+[ext_resource type="PackedScene" uid="uid://3ooncxjs0h52" path="res://assets/meat_raw.tscn" id="9_rt11m"]
+[ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="10_lihb5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ha6g"]
 size = Vector3(0.295654, 0.113342, 0.0078125)
@@ -14,8 +18,83 @@ size = Vector3(0.295654, 0.113342, 0.0078125)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5xsxf"]
 size = Vector3(0.0531158, 0.189453, 0.111084)
 
+[sub_resource type="Animation" id="Animation_1orcs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SnapZone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.16, 0.083, 0.007)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SnapZone:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_prf3r"]
+resource_name = "load_dog"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SnapZone:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.15229, 0.083, 0.007), Vector3(0.16, 0.083, 0.007)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_magazine_loaded"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SnapZone:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qgy5l"]
+_data = {
+"RESET": SubResource("Animation_1orcs"),
+"load_dog": SubResource("Animation_prf3r")
+}
+
 [node name="PickableObject" instance=ExtResource("1_kiuk4")]
-script = ExtResource("2_wg4x5")
+script = ExtResource("2_cr4qw")
 bullet = ExtResource("3_xs44u")
 bullet_speed = 10.0
 
@@ -35,13 +114,36 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="GrabPointHandRight" parent="." index="4" instance=ExtResource("6_qwk8d")]
 transform = Transform3D(0.00122173, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00122173, 0, 0, 0)
 
-[node name="Cooldown" type="Timer" parent="." index="5"]
-
-[node name="SpawnPoint" type="Marker3D" parent="." index="6"]
+[node name="SpawnPoint" type="Marker3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266118, 0, 0)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="7"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0949478, -0.034668, 0)
 shape = SubResource("BoxShape3D_5xsxf")
 
-[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[node name="meshes" type="Node3D" parent="." index="7"]
+visible = false
+
+[node name="meat_cooked" parent="meshes" index="0" instance=ExtResource("7_85n62")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+
+[node name="meat_burned" parent="meshes" index="1" instance=ExtResource("8_y3r4r")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+
+[node name="meat_raw" parent="meshes" index="2" instance=ExtResource("9_rt11m")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+
+[node name="SnapZone" parent="." index="8" instance=ExtResource("10_lihb5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, 0.083, 0.007)
+snap_require = "Magazine"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="9"]
+libraries = {
+"": SubResource("AnimationLibrary_qgy5l")
+}
+
+[connection signal="fire" from="." to="." method="on_fire"]
+[connection signal="has_picked_up" from="SnapZone" to="." method="_on_snap_zone_has_picked_up"]

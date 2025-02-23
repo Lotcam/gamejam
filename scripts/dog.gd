@@ -13,19 +13,19 @@ func _physics_process(_delta):
     if moving:
         move_and_slide()
     
-func feed():
-    print("fed doggo")
-    #TODO: score up
-    queue_free()
+func feed(meat: Util.MEAT_STATE):
+	Global.score_up(meat)
+	print("score: " + str(Global.score))
+	queue_free()
 
 func _on_timer_feed_despawn_timeout() -> void:
     queue_free()
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-    if body.is_in_group("bullet"):
-        feed()
-        if body.has_method("despawn"): body.despawn()
+	if body.is_in_group("bullet"):
+		feed(body.meat_type)
+		if body.has_method("despawn"): body.despawn()
 
 func initialize(start_position, pivot_position):
     look_at_from_position(start_position, pivot_position, Vector3.UP)
