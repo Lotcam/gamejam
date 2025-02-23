@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://u62u48jaj6ai"]
+[gd_scene load_steps=6 format=3 uid="uid://u62u48jaj6ai"]
 
 [ext_resource type="Script" path="res://objects/bullet.gd" id="1_hx6rd"]
-[ext_resource type="PackedScene" uid="uid://cdvrjd6tchxhj" path="res://assets/meat.glb" id="1_q418b"]
+[ext_resource type="PackedScene" uid="uid://vrsw8rriwhlw" path="res://assets/meat_cooked.tscn" id="2_mh07t"]
+[ext_resource type="PackedScene" uid="uid://dd5n7slqclqye" path="res://assets/meat_burned.tscn" id="3_xvkgp"]
+[ext_resource type="PackedScene" uid="uid://3ooncxjs0h52" path="res://assets/meat_raw.tscn" id="4_oyse0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qohtf"]
 size = Vector3(0.282227, 0.0373535, 0.034668)
@@ -9,9 +11,6 @@ size = Vector3(0.282227, 0.0373535, 0.034668)
 [node name="Bullet" type="RigidBody3D" groups=["bullet"]]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.487442, 0, 0)
 script = ExtResource("1_hx6rd")
-
-[node name="meat" parent="." instance=ExtResource("1_q418b")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.208665, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00146481, -0.124993, 0.00744629)
@@ -22,6 +21,18 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="LifeTime" to="." method="_on_life_time_timeout"]
+[node name="meshes" type="Node3D" parent="."]
 
-[editable path="meat"]
+[node name="meat_cooked" parent="meshes" instance=ExtResource("2_mh07t")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+
+[node name="meat_burned" parent="meshes" instance=ExtResource("3_xvkgp")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+
+[node name="meat_raw" parent="meshes" instance=ExtResource("4_oyse0")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+
+[connection signal="timeout" from="LifeTime" to="." method="_on_life_time_timeout"]

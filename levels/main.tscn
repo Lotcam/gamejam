@@ -62,6 +62,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000961214, 1.00614, -1.5188
 [node name="Beagle" parent="." instance=ExtResource("6_qyb1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57117, 0, -7.87667)
 
+[node name="Beagle2" parent="." instance=ExtResource("6_qyb1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133989, 0, -7.87667)
+
+[node name="Beagle3" parent="." instance=ExtResource("6_qyb1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.50133, 0, -7.87667)
+
 [node name="PickableObject2" parent="." instance=ExtResource("5_mbvr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.38851)
 

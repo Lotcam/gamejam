@@ -6,7 +6,7 @@ var is_loaded = false
 func on_magazine_loaded():
 	$meshes.show()
 	is_loaded = true
-	$".".loaded_dog()
+	$".".loaded_dog(snap_zone.picked_up_object.state)
 
 func on_fire():
 	if is_loaded:

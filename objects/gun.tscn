@@ -126,6 +126,7 @@ visible = false
 
 [node name="meat_cooked" parent="meshes" index="0" instance=ExtResource("7_85n62")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
 
 [node name="meat_burned" parent="meshes" index="1" instance=ExtResource("8_y3r4r")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
