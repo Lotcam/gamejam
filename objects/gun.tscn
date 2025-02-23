@@ -93,7 +93,7 @@ _data = {
 "load_dog": SubResource("Animation_prf3r")
 }
 
-[node name="PickableObject" instance=ExtResource("1_kiuk4")]
+[node name="PickableObject2" instance=ExtResource("1_kiuk4")]
 script = ExtResource("2_cr4qw")
 bullet = ExtResource("3_xs44u")
 bullet_speed = 10.0

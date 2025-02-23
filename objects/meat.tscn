@@ -44,12 +44,10 @@ shape = SubResource("BoxShape3D_jbga4")
 
 [node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource("3_w32te")]
 transform = Transform3D(0.0215446, -0.999768, -0.000605559, -0.999373, -0.0215531, 0.0280896, -0.0280961, -1.38785e-10, -0.999605, -0.0548868, 0.0669825, 0.0962657)
-visible = true
 hand_pose = SubResource("Resource_qidsl")
 
 [node name="GrabPointHandRight" parent="." index="3" instance=ExtResource("6_wxyr2")]
 transform = Transform3D(-0.0410212, -0.999158, 0, 0.999158, -0.0410212, 0, 0, 0, 1, -0.0618088, 0.0708555, -0.0890096)
-visible = true
 hand_pose = SubResource("Resource_307jm")
 
 [node name="Area3D" type="Area3D" parent="." index="4"]
