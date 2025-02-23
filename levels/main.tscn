@@ -64,3 +64,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57117, 0, -7.87667)
 
 [node name="PickableObject2" parent="." instance=ExtResource("5_mbvr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.38851)
+
+[node name="PickableObject3" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.49861)
+
+[node name="PickableObject4" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.57103)
+
+[node name="PickableObject5" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.70188)
