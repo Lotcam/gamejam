@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bi80h5b0o2o5s"]
+[gd_scene load_steps=16 format=3 uid="uid://bi80h5b0o2o5s"]
 
 [ext_resource type="PackedScene" uid="uid://coxodwc7a7nw6" path="res://objects/player.tscn" id="1_0mcer"]
 [ext_resource type="Script" path="res://levels/main.gd" id="1_ykp7m"]
@@ -116,13 +116,11 @@ mesh = SubResource("CylinderMesh_8oswp")
 curve = SubResource("Curve3D_2s75k")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.999541, 0, 0.0302885, 0, 1, 0, -0.0302885, 0, -0.999541, -16.7311, 0, -19.5787)
+transform = Transform3D(-0.999541, 0, 0.0302897, 0, 1, 0, -0.0302897, 0, -0.999541, -16.7311, 0, -19.5787)
 
 [node name="DogTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
-
-[connection signal="timeout" from="DogTimer" to="." method="_on_dog_timer_timeout"]
 
 [node name="Beagle2" parent="." instance=ExtResource("6_qyb1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133989, 0, -7.87667)
@@ -141,3 +139,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.57103)
 
 [node name="PickableObject5" parent="." instance=ExtResource("5_mbvr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.70188)
+
+[connection signal="timeout" from="DogTimer" to="." method="_on_dog_timer_timeout"]
