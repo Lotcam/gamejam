@@ -94,6 +94,7 @@ _data = {
 script = ExtResource("2_cr4qw")
 bullet = ExtResource("3_xs44u")
 bullet_speed = 10.0
+press_to_hold = false
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00726321, -0.0161765, 0.00341797)
