@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dndluq7hpbj3q"]
+
+[ext_resource type="PackedScene" uid="uid://dx5bb6y1716ya" path="res://assets/Campfire.glb" id="1_2lrdc"]
+
+[node name="CampFire" type="Node3D"]
+
+[node name="Campfire" parent="." instance=ExtResource("1_2lrdc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Campfire"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

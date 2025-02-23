@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cw1042clugkde"]
+[gd_scene load_steps=16 format=3 uid="uid://cw1042clugkde"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_kiuk4"]
 [ext_resource type="Script" path="res://objects/gun.gd" id="2_cr4qw"]
@@ -13,10 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ce7vysyvondf8" path="res://addons/godot-xr-tools/objects/snap_zone.tscn" id="10_lihb5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ha6g"]
-size = Vector3(0.295654, 0.113342, 0.0078125)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5xsxf"]
-size = Vector3(0.0531158, 0.189453, 0.111084)
+size = Vector3(0.266968, 0.243423, 0.102539)
 
 [sub_resource type="Animation" id="Animation_1orcs"]
 length = 0.001
@@ -93,13 +90,13 @@ _data = {
 "load_dog": SubResource("Animation_prf3r")
 }
 
-[node name="PickableObject" instance=ExtResource("1_kiuk4")]
+[node name="PickableObject2" instance=ExtResource("1_kiuk4")]
 script = ExtResource("2_cr4qw")
 bullet = ExtResource("3_xs44u")
 bullet_speed = 10.0
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0216064, 0.0488642, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00726321, -0.0161765, 0.00341797)
 shape = SubResource("BoxShape3D_7ha6g")
 
 [node name="hotgun" parent="." index="1" instance=ExtResource("3_uncpm")]
@@ -117,11 +114,7 @@ transform = Transform3D(0.00122173, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.001221
 [node name="SpawnPoint" type="Marker3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266118, 0, 0)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0949478, -0.034668, 0)
-shape = SubResource("BoxShape3D_5xsxf")
-
-[node name="meshes" type="Node3D" parent="." index="7"]
+[node name="meshes" type="Node3D" parent="." index="6"]
 visible = false
 
 [node name="meat_cooked" parent="meshes" index="0" instance=ExtResource("7_85n62")]
@@ -136,11 +129,11 @@ visible = false
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 visible = false
 
-[node name="SnapZone" parent="." index="8" instance=ExtResource("10_lihb5")]
+[node name="SnapZone" parent="." index="7" instance=ExtResource("10_lihb5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, 0.083, 0.007)
 snap_require = "Magazine"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="9"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
 libraries = {
 "": SubResource("AnimationLibrary_qgy5l")
 }

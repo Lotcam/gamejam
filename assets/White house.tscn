@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyuuvfcnpltou"]
+
+[ext_resource type="PackedScene" uid="uid://bqwejydyey4ci" path="res://assets/Farm house.glb" id="1_0bdtb"]
+
+[node name="WhiteHouse" type="Node3D"]
+
+[node name="Farm house" parent="." instance=ExtResource("1_0bdtb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Farm house"]

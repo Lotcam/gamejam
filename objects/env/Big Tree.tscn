@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://fin4a427dyy2"]
+
+[ext_resource type="PackedScene" uid="uid://ksn3t4jg2uc5" path="res://assets/Big Tree.glb" id="1_5p4al"]
+
+[node name="BigTree" type="Node3D"]
+
+[node name="Big Tree" parent="." instance=ExtResource("1_5p4al")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.10398, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
