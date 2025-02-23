@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bi80h5b0o2o5s"]
+[gd_scene load_steps=17 format=3 uid="uid://bi80h5b0o2o5s"]
 
 [ext_resource type="PackedScene" uid="uid://coxodwc7a7nw6" path="res://objects/player.tscn" id="1_0mcer"]
 [ext_resource type="Script" path="res://levels/main.gd" id="1_ykp7m"]
@@ -37,10 +37,10 @@ material = SubResource("StandardMaterial3D_2tlai")
 
 [sub_resource type="Curve3D" id="Curve3D_2s75k"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -16.7311, 0, -19.5787, 0, 0, 0, 0, 0, 0, -17.0791, 0, -8.09489, 0, 0, 0, 0, 0, 0, 17.2563, 0, -8.21089, 0, 0, 0, 0, 0, 0, 17.3723, 0, -19.1147, 0, 0, 0, 0, 0, 0, -16.7311, 0, -19.5787),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -23.1051, 0, -19.5787, 0, 0, 0, 0, 0, 0, -22.5739, 0, -8.09489, 0, 0, 0, 0, 0, 0, -1.71919, 0, -8.21089, 0, 0, 0, 0, 0, 0, -2.18931, 0, -19.1147),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 5
+point_count = 4
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_ykp7m")
@@ -83,52 +83,46 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1957, 0, -24.2436)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63714, 5.64727, 4.76444)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.79135, 5.64727, 4.76444)
 mesh = SubResource("CylinderMesh_8oswp")
 
 [node name="Cylinder2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2996, 0, -24.2436)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02912, 5.64727, 5.22843)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5432, 5.64727, 5.22843)
 mesh = SubResource("CylinderMesh_8oswp")
 
 [node name="Cylinder3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2996, 0, -8.23586)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02912, 5.64727, 0.240514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2977, 5.64727, 0.240514)
 mesh = SubResource("CylinderMesh_8oswp")
 
 [node name="Cylinder4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.93185, 0, -8.23586)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.01703, 5.64727, 0.124519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9039, 5.64727, 0.124519)
 mesh = SubResource("CylinderMesh_8oswp")
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00385, 0, -15.8917)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.01703, 5.64727, 1.86449)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7869, 5.64727, 1.86449)
 mesh = SubResource("CylinderMesh_8oswp")
 
 [node name="SpawnPath" type="Path3D" parent="."]
 curve = SubResource("Curve3D_2s75k")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
-transform = Transform3D(-0.999541, 0, 0.0302897, 0, 1, 0, -0.0302897, 0, -0.999541, -16.7311, 0, -19.5787)
+transform = Transform3D(-0.99893, 0, -0.0462049, 0, 1, 0, 0.0462049, 0, -0.99893, -23.1051, 0, -19.5787)
 
 [node name="DogTimer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
-
-[node name="Beagle2" parent="." instance=ExtResource("6_qyb1i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133989, 0, -7.87667)
-
-[node name="Beagle3" parent="." instance=ExtResource("6_qyb1i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.50133, 0, -7.87667)
 
 [node name="PickableObject2" parent="." instance=ExtResource("5_mbvr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.38851)
@@ -142,6 +136,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.57103)
 [node name="PickableObject5" parent="." instance=ExtResource("5_mbvr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.70188)
 
-[connection signal="timeout" from="DogTimer" to="." method="_on_dog_timer_timeout"]
 [node name="env" parent="." instance=ExtResource("8_rjb4s")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 3.80449, -22.0853, -12.2331)
+
+[connection signal="timeout" from="DogTimer" to="." method="_on_dog_timer_timeout"]

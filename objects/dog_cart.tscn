@@ -1,16 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2xdgekjs5s8q"]
+[gd_scene load_steps=8 format=3 uid="uid://d2xdgekjs5s8q"]
 
-[ext_resource type="PackedScene" uid="uid://c847ytyy0x173" path="res://assets/Hot dogs! Get your hot dogs!.glb" id="1_efq1u"]
+[ext_resource type="PackedScene" uid="uid://c62f2gvwc1dt5" path="res://assets/stand.glb" id="1_ukuh3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f8vkj"]
-size = Vector3(0.746582, 0.70752, 1.46075)
+size = Vector3(0.625244, 0.404419, 1.46075)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n7owq"]
+size = Vector3(0.570572, 0.191132, 0.0333252)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vep00"]
+size = Vector3(0.567505, 0.19873, 0.0378418)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kux24"]
+size = Vector3(0.535431, 0.0336914, 0.713654)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6k4ar"]
+size = Vector3(0.0272217, 0.396118, 0.679794)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nynlh"]
+size = Vector3(0.0465865, 0.525391, 0.649231)
 
 [node name="DogCart" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.498832, -0.302863, 0)
 
-[node name="Hot dogs! Get your hot dogs!" parent="." instance=ExtResource("1_efq1u")]
-transform = Transform3D(2.75, 0, 0, 0, 2.75, 0, 0, 0, 2.75, 0, 0.680742, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305176, 0.652383, 0.0104675)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00472826, 0.446995, 0.0104675)
 shape = SubResource("BoxShape3D_f8vkj")
+
+[node name="stand" parent="." instance=ExtResource("1_ukuh3")]
+transform = Transform3D(2.75, 0, 0, 0, 2.75, 0, 0, 0, 2.75, 0, 0.681, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0104446, 0.964217, 0.625531)
+shape = SubResource("BoxShape3D_n7owq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0131331, 0.956543, 0.0093075)
+shape = SubResource("BoxShape3D_vep00")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00138855, 0.884472, 0.314255)
+shape = SubResource("BoxShape3D_kux24")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.638634, -0.769511, 0, 0.769511, 0.638634, 0, 0, 0, 1, -0.137058, 0.934866, 0.307051)
+shape = SubResource("BoxShape3D_6k4ar")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295577, 0.762695, 0.312225)
+shape = SubResource("BoxShape3D_nynlh")
