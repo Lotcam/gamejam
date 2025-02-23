@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://4xsu352m7sl7"]
+
+[ext_resource type="PackedScene" uid="uid://by2r5rilphhxq" path="res://assets/Park Bench.glb" id="1_tdjy2"]
+
+[node name="Bench" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.226521, 1.48174, 0)
+
+[node name="Park Bench" parent="." instance=ExtResource("1_tdjy2")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

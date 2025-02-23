@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwqa6l4tcysci"]
+
+[ext_resource type="PackedScene" uid="uid://grjmru8a77m2" path="res://assets/swing set (1).glb" id="1_atk4r"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="swing set (1)" parent="." instance=ExtResource("1_atk4r")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="swing set (1)"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

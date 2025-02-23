@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://chxkgvenqdpg8"]
+
+[ext_resource type="PackedScene" uid="uid://cms07xghh6rr3" path="res://assets/Seesaw.glb" id="1_qxuk3"]
+
+[node name="Seesaw" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 203.125, 13.0402, -343.662)
+
+[node name="Seesaw" parent="." instance=ExtResource("1_qxuk3")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 203.125, 13.0402, -343.662)

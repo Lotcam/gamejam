@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4lyid15dv64h"]
+
+[ext_resource type="PackedScene" uid="uid://dwg7ddhnm3ai4" path="res://assets/Grass Platform.glb" id="1_4pgjq"]
+
+[node name="GrassPlatform" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Grass Platform" parent="." instance=ExtResource("1_4pgjq")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, -4.32122, 0)

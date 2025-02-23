@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d186rl17722ma"]
+
+[ext_resource type="PackedScene" uid="uid://edeyaw41wl15" path="res://objects/env/Bush.glb" id="1_2mef6"]
+
+[node name="Bush" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_2mef6")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Root Scene"]

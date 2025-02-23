@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4jqbr7puvuk6"]
+
+[ext_resource type="PackedScene" uid="uid://bot46pfnbebgj" path="res://assets/Grass (1).glb" id="1_tkt65"]
+
+[node name="GrassA" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_tkt65")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Root Scene"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

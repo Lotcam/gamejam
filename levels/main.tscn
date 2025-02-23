@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bi80h5b0o2o5s"]
+[gd_scene load_steps=14 format=3 uid="uid://bi80h5b0o2o5s"]
 
 [ext_resource type="PackedScene" uid="uid://coxodwc7a7nw6" path="res://objects/player.tscn" id="1_0mcer"]
 [ext_resource type="Script" path="res://levels/main.gd" id="1_ykp7m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cw1042clugkde" path="res://objects/gun.tscn" id="5_j7lik"]
 [ext_resource type="PackedScene" uid="uid://dksbwiieibgam" path="res://objects/meat.tscn" id="5_mbvr2"]
 [ext_resource type="PackedScene" uid="uid://wfo1d6igdbq8" path="res://objects/dogs/beagle.tscn" id="6_qyb1i"]
+[ext_resource type="PackedScene" uid="uid://bcnqhfaxq5we1" path="res://objects/env/env.tscn" id="8_rjb4s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pwm22"]
 sky_top_color = Color(0.709077, 0.191517, 0.630017, 1)
@@ -39,6 +40,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="Floor" type="StaticBody3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_umbqx")
@@ -79,3 +81,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.57103)
 
 [node name="PickableObject5" parent="." instance=ExtResource("5_mbvr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.70188)
+
+[node name="env" parent="." instance=ExtResource("8_rjb4s")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 3.80449, -22.0853, -12.2331)
