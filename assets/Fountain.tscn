@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5unt8jma6wsw"]
+
+[ext_resource type="PackedScene" uid="uid://di240blfecw18" path="res://objects/env/Fountain (1).glb" id="1_ibf07"]
+
+[node name="Fountain" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_ibf07")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Root Scene"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8s73qs1a6t8m"]
+
+[ext_resource type="PackedScene" uid="uid://dnrgkf2u0mrrt" path="res://assets/cleangrill.glb" id="2_pgifj"]
+[ext_resource type="Script" path="res://objects/area_grill.gd" id="2_wxiat"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p4xgh"]
+height = 0.0541718
+radius = 0.452921
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m7ahc"]
+height = 0.0866602
+radius = 0.457976
+
+[node name="grill" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00451565, 0.709452, 0.0166238)
+shape = SubResource("CylinderShape3D_p4xgh")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.877813, 0)
+script = ExtResource("2_wxiat")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.140932, 0)
+shape = SubResource("CylinderShape3D_m7ahc")
+
+[node name="cleangrill" parent="." instance=ExtResource("2_pgifj")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.353, 0)

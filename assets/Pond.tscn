@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dilfhs733e685"]
+
+[ext_resource type="PackedScene" uid="uid://b6bkcipcryxv7" path="res://objects/env/Pond.glb" id="1_mbxkr"]
+
+[node name="Pond" type="Node3D"]
+
+[node name="Pond" parent="." instance=ExtResource("1_mbxkr")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Pond"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://vrsw8rriwhlw"]
+
+[ext_resource type="PackedScene" uid="uid://d2n5iac7frs0v" path="res://assets/meat_cooked.glb" id="1_xklw4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7u24c"]
+albedo_color = Color(0.419653, 0.180165, 1.92523e-07, 1)
+
+[node name="meat_cooked" instance=ExtResource("1_xklw4")]
+
+[node name="Hotdog_Cube_002" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7u24c")

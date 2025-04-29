@@ -1,0 +1,142 @@
+[gd_scene load_steps=17 format=3 uid="uid://bi80h5b0o2o5s"]
+
+[ext_resource type="PackedScene" uid="uid://coxodwc7a7nw6" path="res://objects/player.tscn" id="1_0mcer"]
+[ext_resource type="Script" path="res://levels/main.gd" id="1_ykp7m"]
+[ext_resource type="PackedScene" uid="uid://d2xdgekjs5s8q" path="res://objects/dog_cart.tscn" id="3_023fo"]
+[ext_resource type="PackedScene" uid="uid://b8s73qs1a6t8m" path="res://objects/grill.tscn" id="4_w1fll"]
+[ext_resource type="PackedScene" uid="uid://cw1042clugkde" path="res://objects/gun.tscn" id="5_j7lik"]
+[ext_resource type="PackedScene" uid="uid://dksbwiieibgam" path="res://objects/meat.tscn" id="5_mbvr2"]
+[ext_resource type="PackedScene" uid="uid://wfo1d6igdbq8" path="res://objects/dogs/beagle.tscn" id="6_qyb1i"]
+[ext_resource type="PackedScene" uid="uid://bcnqhfaxq5we1" path="res://objects/env/env.tscn" id="8_rjb4s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pwm22"]
+sky_top_color = Color(0.709077, 0.191517, 0.630017, 1)
+sky_horizon_color = Color(0.622283, 0.619459, 0.910289, 1)
+ground_bottom_color = Color(1, 0.584314, 0.00392157, 1)
+ground_horizon_color = Color(1, 0.541176, 0.764706, 1)
+
+[sub_resource type="Sky" id="Sky_v5ocp"]
+sky_material = SubResource("ProceduralSkyMaterial_pwm22")
+
+[sub_resource type="Environment" id="Environment_hr6io"]
+background_mode = 2
+sky = SubResource("Sky_v5ocp")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_umbqx"]
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tggdt"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2tlai"]
+albedo_color = Color(0.775011, 0, 0.36605, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8oswp"]
+material = SubResource("StandardMaterial3D_2tlai")
+
+[sub_resource type="Curve3D" id="Curve3D_2s75k"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -23.1051, 0, -19.5787, 0, 0, 0, 0, 0, 0, -22.5739, 0, -8.09489, 0, 0, 0, 0, 0, 0, -1.71919, 0, -8.21089, 0, 0, 0, 0, 0, 0, -2.18931, 0, -19.1147),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_ykp7m")
+dog_scene = ExtResource("6_qyb1i")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hr6io")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("PlaneMesh_umbqx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_tggdt")
+
+[node name="Player" parent="." instance=ExtResource("1_0mcer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="DogCart" parent="." instance=ExtResource("3_023fo")]
+transform = Transform3D(0.022129, 0, -0.999755, 0, 1, 0, 0.999755, 0, 0.022129, -0.218404, 0, -1.60773)
+
+[node name="grill" parent="." instance=ExtResource("4_w1fll")]
+transform = Transform3D(0.282107, 0, 0.959383, 0, 1, 0, -0.959383, 0, 0.282107, -1.36076, 0.371793, -0.564169)
+
+[node name="PickableObject" parent="." instance=ExtResource("5_j7lik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000961214, 1.00614, -1.51887)
+
+[node name="Beagle" parent="." instance=ExtResource("6_qyb1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57117, 0, -7.87667)
+visible = false
+
+[node name="Cylinder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1957, 0, -24.2436)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.79135, 5.64727, 4.76444)
+mesh = SubResource("CylinderMesh_8oswp")
+
+[node name="Cylinder2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2996, 0, -24.2436)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5432, 5.64727, 5.22843)
+mesh = SubResource("CylinderMesh_8oswp")
+
+[node name="Cylinder3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2996, 0, -8.23586)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2977, 5.64727, 0.240514)
+mesh = SubResource("CylinderMesh_8oswp")
+
+[node name="Cylinder4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.93185, 0, -8.23586)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9039, 5.64727, 0.124519)
+mesh = SubResource("CylinderMesh_8oswp")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00385, 0, -15.8917)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7869, 5.64727, 1.86449)
+mesh = SubResource("CylinderMesh_8oswp")
+
+[node name="SpawnPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_2s75k")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-0.99893, 0, -0.046207, 0, 1, 0, 0.046207, 0, -0.99893, -23.1051, 0, -19.5787)
+
+[node name="DogTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="PickableObject2" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.38851)
+
+[node name="PickableObject3" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.49861)
+
+[node name="PickableObject4" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.57103)
+
+[node name="PickableObject5" parent="." instance=ExtResource("5_mbvr2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.443562, 1.2373, -1.70188)
+
+[node name="env" parent="." instance=ExtResource("8_rjb4s")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 3.80449, -22.0853, -12.2331)
+
+[connection signal="timeout" from="DogTimer" to="." method="_on_dog_timer_timeout"]
